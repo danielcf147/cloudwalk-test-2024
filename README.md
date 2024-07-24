@@ -1,23 +1,28 @@
 # CloudWalk case teste
 
-Para inciar este projeto, é necessário instalar as dependências, que serão utilizadas nos testes. Portanto utilize o comando abaixo para instalar tais dependências:
+To start this project, you need to have Docker installed. To run the application, follow the commands below.
 
 ````
-pip install -r requirements.txt
+docker-compose build
+docker-compose up
 
 ````
-Para rodar a api deve se digitar:
+App1 has a localhost web page, which has a select file and upload button.
+
+The route for App1 is:
 
 ````
-python manage.py runserver
+http://localhost:5001/
+````
+App2 has a .env.example file. You need to create a .env file with the information from the example and include the sender's email and password, as well as the recipient's email.
+
+App2 has a localhost web page, which has a select file and upload button.
+
+App2 has two routes:
+
+````
+http://localhost:5002/
+http://localhost:5002/metrics
 ````
 
-
-# **Sobre as rotas**
-
-
-````
-Rotas Transaction:
-POST: /api/transaction/ - {Parametros: arquivo CSV}
-````
 
