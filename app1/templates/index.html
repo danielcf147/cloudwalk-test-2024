@@ -1,0 +1,106 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Detection</title>
+</head>
+<body>
+    <h1>Anomaly Detection</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file1">Select CSV File:</label>
+        <input type="file" id="file1" name="file1" accept=".csv" required>
+        <br><br>
+        <input type="submit" value="Upload">
+    </form>
+    {% if plot_url1 %}
+    <h2>DataFrame Plot</h2>
+    <img src="data:image/png;base64,{{ plot_url1 }}" alt="Plot">
+    {% endif %}
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Detection</title>
+</head>
+<body>
+    <h1>Anomaly Detection</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file1">Select CSV File:</label>
+        <input type="file" id="file1" name="file1" accept=".csv" required>
+        <br><br>
+        <input type="submit" value="Upload">
+    </form>
+    {% if tables %}
+    <h2>Calculated Statistics</h2>
+    {{ tables|safe }}
+    {% endif %}
+    {% if plot_url1 %}
+    <h2>DataFrame Plot</h2>
+    <img src="data:image/png;base64,{{ plot_url1 }}" alt="Plot">
+    {% endif %}
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Data Analysis</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file1">
+        <input type="submit" value="Upload">
+    </form>
+    {% if tables %}
+        <h2>Data Table</h2>
+        {{ tables|safe }}
+    {% endif %}
+    {% if plot_url1 %}
+        <h2>Hourly Data</h2>
+        <img src="data:image/png;base64,{{ plot_url1 }}">
+    {% endif %}
+    {% if plot_url2 %}
+        <h2>Anomalies in Hourly Data</h2>
+        <img src="data:image/png;base64,{{ plot_url2 }}">
+    {% endif %}
+    {% if csv_data %}
+        <h2>Download CSV</h2>
+        <a href="data:text/csv;base64,{{ csv_data }}" download="data.csv">Download</a>
+    {% endif %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Data Analysis</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file1">
+        <input type="submit" value="Upload">
+    </form>
+    {% if tables %}
+        <h2>Data Table</h2>
+        {{ tables|safe }}
+    {% endif %}
+    {% if plot_url1 %}
+        <h2>Hourly Data</h2>
+        <img src="data:image/png;base64,{{ plot_url1 }}">
+    {% endif %}
+</body>
+</html>
+
+
+
+
+

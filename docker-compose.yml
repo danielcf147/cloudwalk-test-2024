@@ -1,0 +1,111 @@
+# version: '3.8'
+
+# services:
+#   app1:
+#     build:
+#       context: ./app1
+#       dockerfile: Dockerfile
+#     environment:
+#       - APP_NAME=app1
+#     volumes:
+#       - ./app1:/app
+#       - ./app1/templates:/app/templates
+#     command: python app1.py
+#     ports:
+#       - "5001:5000"
+
+#   app2:
+#     build:
+#       context: ./app2
+#       dockerfile: Dockerfile
+#     environment:
+#       - APP_NAME=app2
+#     volumes:
+#       - ./app2:/app
+#       - ./app2/templates:/app/templates
+#     command: python app2.py
+#     ports:
+#       - "5002:5000"
+
+
+# version: '3.8'
+
+# services:
+#   app1:
+#     build:
+#       context: ./app1
+#       dockerfile: Dockerfile
+#     environment:
+#       - APP_NAME=app1
+#     volumes:
+#       - ./app1:/app
+#       - ./app1/templates:/app/templates
+#     command: python app1.py
+#     ports:
+#       - "5001:5000"
+#     labels:
+#       - "prometheus.scrape=true"
+#       - "prometheus.port=5000"
+
+#   app2:
+#     build:
+#       context: ./app2
+#       dockerfile: Dockerfile
+#     environment:
+#       - APP_NAME=app2
+#     volumes:
+#       - ./app2:/app
+#       - ./app2/templates:/app/templates
+#     command: python app2.py
+#     ports:
+#       - "5002:5000"
+#     labels:
+#       - "prometheus.scrape=true"
+#       - "prometheus.port=5000"
+
+#   prometheus:
+#     image: prom/prometheus:latest
+#     volumes:
+#       - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#     ports:
+#       - "9090:9090"
+
+#   grafana:
+#     image: grafana/grafana:latest
+#     environment:
+#       - GF_SECURITY_ADMIN_PASSWORD=admin
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - prometheus
+
+
+
+version: '3.8'
+
+services:
+  app1:
+    build:
+      context: ./app1
+      dockerfile: Dockerfile
+    environment:
+      - APP_NAME=app1
+    volumes:
+      - ./app1:/app
+      - ./app1/templates:/app/templates
+    command: python app1.py
+    ports:
+      - "5001:5000"
+
+  app2:
+    build:
+      context: ./app2
+      dockerfile: Dockerfile
+    environment:
+      - APP_NAME=app2
+    volumes:
+      - ./app2:/app
+      - ./app2/templates:/app/templates
+    command: python app2.py
+    ports:
+      - "5002:5000"
